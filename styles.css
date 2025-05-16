@@ -1,0 +1,215 @@
+/* Reset de margens, paddings e definição do box-sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilização do body com background image que cobre toda a tela e texto branco */
+body {
+  font-family: Arial, sans-serif;
+  color: rgb(121, 115, 171);
+  background: url('img/brasil.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Container principal com layout em duas colunas: 18% para sidebar e 82% para conteúdo */
+.container {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  min-height: 100vh;
+}
+
+/* Sidebar (coluna da esquerda) */
+.sidebar {
+  background: rgba(162, 144, 144, 0.874);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo centralizado */
+.logo {
+  margin-bottom: 20px;
+}
+
+/* Responsividade do logo */
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Menu de navegação com botões */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Estilo base para os botões do menu */
+.menu-button {
+  text-decoration: none;
+  color: rgb(155, 214, 250);
+  padding: 10px 30px;
+  border-radius: 4px;
+}
+
+/* Cores neutras para os botões */
+
+.btn-sul {
+  background-color: #1698cb;
+}
+
+.btn-pr {
+  background-color: #1f77be;
+}
+
+.btn-sc {
+  background-color: #2e1bb9;
+}
+
+.btn-rs {
+  background-color: #321583;
+}
+
+/* Área de conteúdo (coluna da direita) */
+.content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Estilo das boxes para as seções */
+.box {
+  background-color: rgba(184, 177, 177, 0.87);
+  padding: 20px;
+  border-radius: 4px;
+}
+
+/* Títulos das boxes em <h2> com cor azul */
+.box h2 {
+  color: #0d2f60;
+  margin-bottom: 10px;
+}
+
+/* Box Home: layout com imagem e texto */
+.home-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Imagem da box Home */
+.home-image {
+  width: 150px;
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+/* Texto da box Home */
+.home-text {
+  flex: 1;
+}
+
+/* Box Links: layout dos botões para links */
+.links-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Estilo dos botões de links */
+.link-button {
+  text-decoration: none;
+
+/* Cores neutras para os botões */
+  color: rgb(216, 226, 232);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Aplicando as cores neutras aos botões de links */
+.link-button.btn-sul {
+  background-color: #1698cb;
+}
+
+.link-button.btn-pr {
+  background-color: #1f77be;
+}
+
+.link-button.btn-sc {
+  background-color: #2e1bb9;
+}
+
+.link-button.btn-rs {
+  background-color: #321583;
+}
+
+/* Formulário de Contato */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Inputs e textarea com fundo semi-transparente */
+.contact-form input,
+.contact-form textarea {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.544);
+  color: rgb(139, 138, 196);
+}
+
+/* Labels do formulário em negrito */
+.contact-form label {
+  font-weight: bold;
+}
+
+/* Botão de enviar com texto em negrito */
+.contact-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(121, 115, 171);
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  /* Em telas menores, o layout passa a ter apenas uma coluna */
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Ajusta a sidebar para exibição horizontal */
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  
+  .menu {
+    flex-direction: row;
+    gap: 5px;
+  }
+  
+  /* Reduz os espaçamentos do conteúdo */
+  .content {
+    padding: 10px;
+  }
+  
+  /* Na box Home, empilha imagem e texto */
+  .home-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
